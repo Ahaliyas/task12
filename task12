@@ -1,0 +1,23 @@
+To start a free VM in Azure, follow these steps:
+1.Sign in to Azure Portal: 
+   Sign in to the Azure portal using your account credentials.
+2.Create Virtual Machine:
+        *Enter "Virtual machines" in the search bar.
+        *Under Services, select Virtual machines.
+        *Click on Create and then Azure virtual machine.
+        *Provide a name for your Virtual machine  and choose an Image.
+        *Configure the necessary settings like Administrator account, Inbound port rules , and review the summary.
+        *Click on Review + create and then Create to deploy the VM.
+        
+SSH into the VM
+Once the VM is created, go to the "Overview" page and take a screenshot of the public IP address. Open your terminal and use the following command to SSH into your VM:ssh Testvm@20.108.26.195
+Navigate to the directory where you have your HTML page and use the following command to clone your repository:git clone https://github.com/ahaliyas/taskten.git      
+Copy the files to the root foldersudo cp -R //home/Testvm/taskten/* /var/www/html/
+Start the Apache webserver:sudo systemctl start apache2
+Access the webpage:Open your web browser and enter the public IP address of your VM to access the webpage.
+Install PHP and MySQL
+Start the MySQL server
+Login to the MySQL server:sudo mysql -u root -p
+Create a database, table, and user
+Create a PHP file:sudo nano /var/www/html/register.php
+Login as the user you created(testuser)
